@@ -4,15 +4,16 @@ not_primes = []
 is_prime = True
 
 for i in numbers:
-    for j in range(2, i):
-        if i % j == 0:
-            not_primes.append(i)
-            break
-        else:
+    if i > 1:
+        for j in range(2, i):
+            if (i % j) == 0:
+                is_prime = False
+                break
+        if is_prime:
             primes.append(i)
-            break
+        else:
+            not_primes.append(i)
+        is_prime = True
 
-
-
-print( 'Primes: ', primes)
-print( 'Not primes: ', not_primes)
+print('Primes: ', primes)
+print('Not primes: ', not_primes)
