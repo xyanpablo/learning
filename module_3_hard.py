@@ -6,7 +6,7 @@ def calculate_structure_sum(*args):
         elif isinstance(i, str):
             result += len(i)
         elif isinstance(i, dict):
-            result += calculate_structure_sum(i.items())
+            result += calculate_structure_sum(*i.items())
         else:
             result += calculate_structure_sum(*i)
     return result
